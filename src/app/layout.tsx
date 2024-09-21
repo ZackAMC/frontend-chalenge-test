@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import 'normalize.css/normalize.css';
+import NavBar from "./ui/navbar";
+import { Banner } from "./ui/banner";
+import { SideNav } from "./sideNav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +20,23 @@ export default function RootLayout({
 }>): JSX.Element {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+
+        <NavBar />
+
+        <Banner />
+
+        <div className="container">
+          
+          <SideNav />
+
+          <main>
+            {children}
+          </main>
+
+        </div>
+
+      </body>
     </html>
   );
 }

@@ -1,0 +1,148 @@
+.cabecera{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    align-items: center;
+    height: 60px;
+    z-index: 9999;
+}
+
+.cabecera .logo {
+    width: auto;
+}
+
+.cabecera .menu{
+    position: fixed;
+    bottom: 60px;
+    left: 0;
+    background-color: #000;
+    padding: 1em;
+    transition: .4s all ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10%);
+}
+
+.cabecera .menu ul{
+    margin: 0;
+    padding: 0;
+}
+
+.cabecera .menu ul li{
+    margin: 15px 0;
+}
+
+.cabecera .menu ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.cabecera .user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cabecera .user svg{
+    fill: #fff;
+    font-size: 25px;
+    width: auto;
+}
+
+.cabecera .user span{
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.cabecera .burguer{
+    width: 40px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cabecera .burguer span{
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    transition: .4s all ease;
+}
+
+/* Accion menu burguer */
+
+.cabecera.activo .burguer span:nth-child(1){
+    transform: translateY(14px) rotate(45deg);
+}
+
+.cabecera.activo .burguer span:nth-child(2){
+    transform: translateX(-10px);
+    opacity: 0;
+}
+
+.cabecera.activo .burguer span:nth-child(3){
+    transform: translateY(-14px) rotate(-45deg);
+}
+
+.cabecera.activo .menu{
+    transform: translateY(0%);
+    opacity: 1;
+    visibility: visible;
+}
+
+@media(min-width: 1024px){
+    .cabecera{
+        bottom: inherit;
+        top: 0;
+        height: 70px;
+        justify-content: space-between;
+        padding: 5px 20px;
+        align-items: center;
+        gap: 20px;
+        padding: 0 150px;
+    }
+
+    .cabecera .logo {
+        flex: 1;
+    }
+
+    .cabecera .menu{
+        position: static;
+        bottom: inherit;
+        left: inherit;
+        background-color: inherit;
+        padding: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0%);
+        flex: 3;
+    }
+    
+    .cabecera .menu ul{
+        display: flex;
+        justify-content: space-between;
+        gap: 4em;
+    }
+
+    .cabecera .menu ul li{
+        width: auto;
+    }
+
+    .cabecera .menu ul li.user{
+        margin-left: auto;
+    }
+
+    .cabecera .menu ul li.user span{
+        display: none;
+    }
+
+    .cabecera .burguer{
+        display: none;
+    }
+}
