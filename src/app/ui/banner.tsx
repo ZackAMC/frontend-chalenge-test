@@ -52,7 +52,6 @@ export const Banner = () => {
                             strokeWidth={6}
                             value={(dataFetch.vote_average * 10)}
                             text={`${(dataFetch.vote_average * 10).toFixed(0)}%`}
-                            
                         />
                     </div>
                 </div>

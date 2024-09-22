@@ -12,6 +12,10 @@ h1 {
   font-size: 2rem;
 }
 
-aside{
-  
+.mainCarruseles{
+  overflow: hidden;
+}
+
+.mainCarruseles .slick-list{
+  overflow: visible !important;
 }

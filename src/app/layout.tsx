@@ -35,7 +35,7 @@ export default function RootLayout({
               <GenerosSelect />
             </div>
           </aside>
-          <main>
+          <main className={`${styles.main} mainCarruseles`}>
             
             {children}
 

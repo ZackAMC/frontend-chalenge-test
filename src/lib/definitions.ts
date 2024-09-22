@@ -10,10 +10,20 @@ export type BannerData = {
 
 export type Resultado = {
     name: string;
-    id: number
+    id: number;
 }
 
 export type Generos = {
     id: number;
-    name: string
+    name: string;
+}
+
+export type Pelis = {
+    id: number;
+    title: string;
+    release_date: string;
+    vote_average: number;
+    backdrop_path: string;
+    overview: string;
+    poster_path: string;
 }

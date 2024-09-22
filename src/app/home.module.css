@@ -128,3 +128,22 @@
 .generos a:hover{
     background-color: #131313;
 }
+
+.main{
+    background: rgb(69,69,69);
+    background: linear-gradient(180deg, rgba(69,69,69,1) 0%, rgba(52,52,52,1) 100%);
+    padding: 30px;
+    width: 100%;
+}
+
+@media(min-width: 1024px){
+    .main{
+        width: calc(100% - 260px);
+    }
+}
+
+
+
+.main .titleSec h2{
+    color: #fff;
+}
