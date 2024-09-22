@@ -88,7 +88,7 @@ export const FilaPelis = ({ titleList }: { titleList: string }) =>{
             {
               listaPelis.map(item=>{
                   return(
-                    <Card pelis={item} />
+                    <Card pelis={item} key={item.id} />
                   )
               })
             }

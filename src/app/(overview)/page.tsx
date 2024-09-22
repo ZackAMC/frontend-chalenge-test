@@ -1,7 +1,7 @@
 import { FilaPelis } from "../filaPelis";
 
 
-export default function Home({ children }: { children: JSX.Element }) {
+export default function Page({ children }: { children: JSX.Element }) {
 
   const criteria = [
     "Popular",

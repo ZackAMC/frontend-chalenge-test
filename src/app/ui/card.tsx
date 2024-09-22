@@ -68,7 +68,7 @@ export const Card = ({ pelis }: { pelis: Pelis }) =>{
             </div>
 
             <Link
-                href={''}
+                href={`/movies/${id}`}
                 className={styles.cardHover}>
                 <p><strong>{title}</strong></p>
                 <p className={styles.sinopsis}>{textoReducido}</p>

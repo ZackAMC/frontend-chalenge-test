@@ -23,24 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NavBar />
-        <Banner />
-
-        <div className={styles.containerMain}>
-          <aside className={styles.sidebar}>
-            <div className={styles.busqueda}>
-              <Busqueda />
-            </div>
-            <div className={styles.generos}>
-              <GenerosSelect />
-            </div>
-          </aside>
-          <main className={`${styles.main} mainCarruseles`}>
-            
-            {children}
-
-          </main>
-        </div>
+          {children}
       </body>
     </html>
   );
