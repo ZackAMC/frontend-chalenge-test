@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { fetchDest } from "@/lib/data";
 import { BannerData } from "@/lib/definitions";
 import Image from 'next/image';
-import '@/app/ui/banner.css';
+import styles from '@/app/ui/banner.module.css';
 import { FaHeart } from "react-icons/fa";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import 'react-circular-progressbar/dist/styles.css';
@@ -25,24 +25,23 @@ export const Banner = () => {
         console.error("Error al obtener los datos", error);
       }
     };
-
     getData();
   }, []);
 
   
   return (
-    <section className="banner">
+    <section className={styles.banner}>
         {dataFetch ? (
-            <div className="container">
-                <div className="info">
+            <div className={styles.container}>
+                <div className={styles.info}>
                     <h2 className={IBM.className}>{dataFetch.title}</h2>
                     <p className={IBM.className}>{dataFetch.overview}</p>
                 </div>
-                <div className="actions">
+                <div className={styles.actions}>
                     
-                    <button className="botonFav"><FaHeart /></button>
+                    <button className={styles.botonFav}><FaHeart /></button>
 
-                    <div className="userScore">
+                    <div className={styles.userScore}>
                         <CircularProgressbar
                             styles={buildStyles({
                                 pathColor: '#4DA14F',
@@ -63,7 +62,7 @@ export const Banner = () => {
                     alt={dataFetch.title}
                     width={500}
                     height={300}
-                    className="imgFondo"
+                    className={styles.imgFondo}
                 />
             </div>
         ) : (

@@ -7,3 +7,13 @@ export type BannerData = {
     popularity: number;
     vote_average: number;
 }
+
+export type Resultado = {
+    name: string;
+    id: number
+}
+
+export type Generos = {
+    id: number;
+    name: string
+}

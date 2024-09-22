@@ -4,7 +4,9 @@ import "./globals.css";
 import 'normalize.css/normalize.css';
 import NavBar from "./ui/navbar";
 import { Banner } from "./ui/banner";
-import { SideNav } from "./sideNav";
+import { Busqueda } from "./ui/busqueda";
+import { GenerosSelect } from "./ui/generos";
+import styles from "@/app/home.module.css"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,21 +23,24 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-
         <NavBar />
-
         <Banner />
 
-        <div className="container">
-          
-          <SideNav />
-
+        <div className={styles.containerMain}>
+          <aside className={styles.sidebar}>
+            <div className={styles.busqueda}>
+              <Busqueda />
+            </div>
+            <div className={styles.generos}>
+              <GenerosSelect />
+            </div>
+          </aside>
           <main>
+            
             {children}
+
           </main>
-
         </div>
-
       </body>
     </html>
   );

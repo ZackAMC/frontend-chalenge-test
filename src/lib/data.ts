@@ -1,5 +1,3 @@
-import { BannerData } from "./definitions"
-
 export async function fetchDest(){
     try{
 
@@ -18,6 +16,51 @@ export async function fetchDest(){
     }
     catch(error){
         console.error('Error en el Fetch')
+        throw error;
     }
 }
 
+
+export async function fetchKeywords(value:string) {
+    try {
+
+        const response = await fetch(`https://api.themoviedb.org/3/search/keyword?query=${value}&page=1`, {
+            method: 'GET',
+            headers: new Headers ({
+              accept: 'application/json',
+              Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzMTY2ZmQ5YzZlMmNhOGJhMTIwY2Y3ZDdiMzQxYmYzMyIsIm5iZiI6MTcyNjg2NzQxNy41NTU1ODcsInN1YiI6IjY2ZWRkMmZmNWVlNjFmYmI3MzhjZjQzYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bWjggVWq6adKWxt4PIdcYSayIGF9Oth2mWCrjnqGlME'
+            })
+        })
+
+        const data = await response.json()
+        const { results } = data
+        return results
+        
+    } catch (error) {
+        console.error('Error en el Fetch')
+        throw error;
+    }
+}
+
+
+export async function fetchGenres() {
+    try {
+
+        const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?language=en`, {
+            method: 'GET',
+            headers: new Headers ({
+              accept: 'application/json',
+              Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzMTY2ZmQ5YzZlMmNhOGJhMTIwY2Y3ZDdiMzQxYmYzMyIsIm5iZiI6MTcyNjg2NzQxNy41NTU1ODcsInN1YiI6IjY2ZWRkMmZmNWVlNjFmYmI3MzhjZjQzYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bWjggVWq6adKWxt4PIdcYSayIGF9Oth2mWCrjnqGlME'
+            })
+        })
+
+        const data = await response.json()
+        const { genres } = data
+        return genres
+        
+        
+    } catch (error) {
+        console.error('Error en el Fetch')
+        throw error;
+    }
+}
