@@ -49,21 +49,19 @@ font-size: 2em;
     gap: 20px;
 }
 
-.banner .userScore{
-    width: 70px;
-    height: 70px;
+.banner .userScore,
+.banner .userScore svg{
+    width: 55px;
+    height: 55px;
 }
 
-.banner .botonFav{
-    border: 0;
-    padding: 0;
-    background-color: inherit;
-    width: auto;
+.banner .favContainer{
+    display: flex;
+    justify-content: flex-start;
 }
 
-.banner .botonFav svg{
-    fill: #F6F6F6;
-    font-size: 30px;
+.banner .favContainer svg{
+    font-size: 20px;
 }
 
 @media(min-width: 1024px){
@@ -104,8 +102,20 @@ font-size: 2em;
         height: 100px;
         font-weight: bold;
     }
-    .banner .botonFav svg{
-        font-size: 25px;
+
+    .banner .userScore svg{
+        height: 92px;
+        width: 92px;
     }
+
+    .banner .favContainer{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .banner .favContainer svg{
+        font-size: 24px;
+    }
+    
     
 }

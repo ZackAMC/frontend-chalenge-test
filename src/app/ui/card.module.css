@@ -172,3 +172,13 @@
 .cardHover .fav span{
     font-size: 10px;
 }
+
+.fav svg{
+    text-align: center;
+}
+
+.grafica{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

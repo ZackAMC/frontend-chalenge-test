@@ -9,6 +9,7 @@ import { FaHeart } from "react-icons/fa";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import 'react-circular-progressbar/dist/styles.css';
 import { IBM } from "@/app/ui/fonts";
+import { FavButton } from "./favButton";
 
 
 
@@ -26,6 +27,7 @@ export const Banner = () => {
       }
     };
     getData();
+
   }, []);
 
   
@@ -39,7 +41,9 @@ export const Banner = () => {
                 </div>
                 <div className={styles.actions}>
                     
-                    <button className={styles.botonFav}><FaHeart /></button>
+                    <div className={styles.favContainer}>
+                      <FavButton ident={dataFetch.id} key={dataFetch.id} />
+                    </div>
 
                     <div className={styles.userScore}>
                         <CircularProgressbar

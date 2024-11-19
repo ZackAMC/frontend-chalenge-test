@@ -4,6 +4,7 @@ import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import Image from 'next/image';
 import { FaHeart } from "react-icons/fa";
 import Link from "next/link";
+import { FavButton } from "./favButton";
 
 export const Card = ({ pelis }: { pelis: Pelis }) =>{
 
@@ -60,10 +61,10 @@ export const Card = ({ pelis }: { pelis: Pelis }) =>{
                         </div>
                     </div>
 
-                    <button className={styles.fav}>
+                    <div className={styles.fav}>
                         <span>Favorites</span>
-                        <FaHeart />
-                    </button>
+                        <FavButton ident={id} key={id} />
+                    </div>
                 </div>
             </div>
 
@@ -91,10 +92,10 @@ export const Card = ({ pelis }: { pelis: Pelis }) =>{
                         </div>
                     </div>
                     
-                    <button className={styles.fav}>
+                    <div className={styles.fav}>
                         <span>Favorites</span>
-                        <FaHeart />
-                    </button>
+                        <FavButton ident={id} key={id} />
+                    </div>
                 </div>
             </Link>
         </div>

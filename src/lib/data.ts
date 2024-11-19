@@ -104,3 +104,52 @@ export async function fetchDataRows(rowTitle:string) {
         throw error;
     }
 }
+
+// Fetch de la info completa una pelicula
+export async function fecthDataMovie(movie:number) {
+    try {
+
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${movie}`, {
+            method: 'GET',
+            headers: new Headers ({
+              accept: 'application/json',
+              Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzMTY2ZmQ5YzZlMmNhOGJhMTIwY2Y3ZDdiMzQxYmYzMyIsIm5iZiI6MTcyNjg2NzQxNy41NTU1ODcsInN1YiI6IjY2ZWRkMmZmNWVlNjFmYmI3MzhjZjQzYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bWjggVWq6adKWxt4PIdcYSayIGF9Oth2mWCrjnqGlME'
+            })
+        })
+
+        const data = await response.json()
+        return data
+        
+        
+    } catch (error) {
+        console.error('Error en el Fetch')
+        throw error;
+    }
+}
+
+
+// Fetch de las pelis relacionadas por genero en interna de pelicula
+export async function fecthRelatedMovie(genres:string) {
+
+    console.log(genres)
+    
+
+    try {
+        
+        const response = await fetch(`https://api.themoviedb.org/3/discover/movie?page=1&with_genres=${genres}`, {
+            method: 'GET',
+            headers: new Headers ({
+                accept: 'application/json',
+                Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzMTY2ZmQ5YzZlMmNhOGJhMTIwY2Y3ZDdiMzQxYmYzMyIsIm5iZiI6MTcyNjg2NzQxNy41NTU1ODcsInN1YiI6IjY2ZWRkMmZmNWVlNjFmYmI3MzhjZjQzYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bWjggVWq6adKWxt4PIdcYSayIGF9Oth2mWCrjnqGlME'
+            })
+        })
+
+        const data = await response.json()
+        const { results } = data
+        return results
+
+    } catch (error) {
+        console.error('Error en el fetch')
+        throw error
+    }
+}

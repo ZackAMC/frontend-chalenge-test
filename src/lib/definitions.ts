@@ -27,3 +27,22 @@ export type Pelis = {
     overview: string;
     poster_path: string;
 }
+
+export type Movie = {
+    id: number;
+    backdrop_path: string;
+    genres: {
+        id: number;
+        name: string;
+    }[];
+    title: string;
+    overview: string;
+    poster_path: string;
+    release_date: string;
+    vote_average: number;
+    runtime: number;
+}
+
+export interface FavButtonProps {
+    ident: number;
+}

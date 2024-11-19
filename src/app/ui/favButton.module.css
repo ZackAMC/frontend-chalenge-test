@@ -1,0 +1,15 @@
+.button{
+    padding: 0;
+    border: 0;
+    background-color: inherit;
+    cursor: pointer;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.button svg{
+    fill: #fff;
+}
