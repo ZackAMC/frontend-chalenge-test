@@ -1,4 +1,4 @@
-export default function Selectgenre({ params }: { params: { name: string } }): JSX.Element {
+export default function selectGenre({ params }: { params: { name: string } }): JSX.Element {
     return(
         <div>
             <h1>{params.name}</h1>
